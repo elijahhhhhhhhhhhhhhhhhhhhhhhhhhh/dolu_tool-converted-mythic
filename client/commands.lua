@@ -1,3 +1,5 @@
+-- Add mythic components here and function keybinds here
+
 lib.addKeybind({
     name = 'dolu_tool:open',
     description = locale('command_openui', '~b~>~w~'),
