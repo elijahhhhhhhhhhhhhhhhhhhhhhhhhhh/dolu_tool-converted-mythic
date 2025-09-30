@@ -6,12 +6,9 @@ function RetrieveComponents()
 	--Targeting = exports["mythic-base"]:FetchComponent("Targeting")
 	--Progress = exports["mythic-base"]:FetchComponent("Progress")
 	--Hud = exports["mythic-base"]:FetchComponent("Hud")
-	--Notification = exports["mythic-base"]:FetchComponent("Notification")
+	Notification = exports["mythic-base"]:FetchComponent("Notification")
+	Chat = exports["mythic-base"]:FetchComponent("Chat")
 	--ObjectPlacer = exports["mythic-base"]:FetchComponent("ObjectPlacer")
-	--Minigame = exports["mythic-base"]:FetchComponent("Minigame")
-	--ListMenu = exports["mythic-base"]:FetchComponent("ListMenu")
-	--PedInteraction = exports["mythic-base"]:FetchComponent("PedInteraction")
-	--Polyzone = exports["mythic-base"]:FetchComponent("Polyzone")
     RegisterChatCommands()
 end
 
@@ -22,19 +19,15 @@ AddEventHandler("Core:Shared:Ready", function()
         --"Targeting",
         --"Progress",
         --"Hud",
-        --"Notification",
+        "Notification",
+        "Chat",
         --"ObjectPlacer",
-		--"Minigame",
-		--"ListMenu",
-		--"PedInteraction",
-		--"Polyzone",
 	}, function(error)
 		if #error > 0 then 
             exports["mythic-base"]:FetchComponent("Logger"):Critical("Tool", "Failed To Load All Dependencies")
 			return
 		end
 		RetrieveComponents()
-                
 	end)
 end)
 
@@ -42,6 +35,8 @@ function RegisterChatCommands()
     Chat:RegisterAdminCommand("opentool", function(source, args, rawCommand)
 		if not IsNuiFocused() and not IsPauseMenuActive() then
             Utils.openUI()
+                print(" [DEBUG DOLU TOOL TESTING] SUCCESSFULLY OPENED MENU)
+                Notification:Info("Mapping Tool Opened!)
 	end, {
 		help = "Open Dolu Mapping Tool",
 	})
