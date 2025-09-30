@@ -39,7 +39,12 @@ AddEventHandler("Core:Shared:Ready", function()
 end)
 
 function RegisterChatCommands()
-    
+    Chat:RegisterAdminCommand("opentool", function(source, args, rawCommand)
+		if not IsNuiFocused() and not IsPauseMenuActive() then
+            Utils.openUI()
+	end, {
+		help = "Open Dolu Mapping Tool",
+	})
 
 
 lib.addKeybind({
