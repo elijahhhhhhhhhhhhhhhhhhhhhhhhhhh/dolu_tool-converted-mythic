@@ -8,9 +8,10 @@ Config.language = 'en'
 -- These are default keys to interact with dolu_tool commands.
 -- You can also override them in your pause menu, in the FiveM keybinds section.
 -- Problay going to re-write this to use mythic chat commands instead of keybinds
-Config.openMenuKey = 'F3'
-Config.toggleNoclipKey = 'F11'
-Config.teleportMarkerKey = 'F10'
+--Config.openMenuKey = 'F3'
+--Config.toggleNoclipKey = 'F11'
+--Config.teleportMarkerKey = 'F10'
+-- These are commented out since we are only using mythic chat commands to open the menu
 
 Config.favoriteVehicle = 'adder'
 Config.customVehiclePlate = '~MYTHIC~' -- Remove the text if you don't want a custom plate.
